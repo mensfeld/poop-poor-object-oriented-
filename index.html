@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Poor Object Oriented Programmers</title>
+
+    <meta name="description" content="Poor Object Oriented Programmers">
+    <meta name="author" content="Maciej Mensfeld">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>POOP - Poor Object Oriented <span style="text-decoration: line-through;">Programming</span> Programmers</h2>
+          <p>
+            <small>
+              <a href="http://mensfeld.pl">Maciej Mensfeld</a> <br/>
+              twitter: <a href="http://twitter.com/maciejmensfeld">@maciejmensfeld</a> </br>
+              www: <a href="http://mensfeld.pl">mensfeld.pl</a> <br/>
+              e-mail: <a href="mailto:maciej@mensfeld.pl">maciej@mensfeld.pl</a>
+            </small>
+          </p>
+        </section>
+
+        <section>
+          <h4>A bit about me</h4>
+
+          <ul>
+          <li>I'm from Poland</li>
+          <li>10 years of commercial exp in IT</li>
+          <li>8 years mostly with Ruby and Rails</li>
+          <li>I love and do open-source (karafka)</li>
+          <li>Interested in quality-assurance automation and software architecture</li>
+          <li>KRUG organizer</li>
+          <li>Conference speaker</li>
+          <li>Former PK student :-)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Please notify me if...</h4>
+
+          <ul>
+          <li>I speak 2 fast</li>
+          <li>I should repeat something</li>
+          <li>I should explain something better</li>
+          <li>You have any questions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>I will be talking mostly in the Ruby context but the same applies to any other OOP language</h3>
+          <img src="img/rubylogo.gif" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+          <h4>In the end, all of it is just (more or less) OOP</h4>
+        </section>
+
+        <section>
+          <h3>Basics</h3>
+
+          <ul>
+            <li>OOP comes from software that runs simulations</li>
+            <li>programs = objects + classes + inheritance</li>
+            <li>programs = objects + messages</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Basics</h3>
+
+          <ul>
+            <li>Inheritance - a way to reuse code of existing objects, or to establish a subtype from an existing object</li>
+            <li>Encapsulation - the art of hiding of data implementation by restricting access to accessors and mutators.</li>
+            <li>Polymorphism - Fruit can be eaten, as a general rule, but different types of fruit is eaten in different ways.</li>
+            <li>Abstraction - Data abstraction is nothing more than the implementation of an object that contains the same essential properties and actions we can find in the original object we are representing.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>A bit of history and stuff</h3>
+
+          <ul>
+            <li>Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects"</li>
+            <li>They may contain data (attributes) and code (methods)</li>
+            <li>Objects have a notion of "this" or "self"</li>
+            <li>In OOP, computer programs are designed by making them out of objects that interact with one another.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>A bit of history and stuff</h3>
+
+          <ul>
+            <li>It's been with us from early 1970</li>
+            <li>"Object Oriented" by Alan Kay</li>
+            <li>1980s - Smalltalk</li>
+            <li>1980s - Hype Driven Development for OOP</li>
+            <li>1990s - Boom on Java, PHP, C++, Ruby and so on...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>A bit of history and stuff</h3>
+
+          <ul>
+            <li>Gang of Four design patterns</li>
+            <li>ORMs (Object-Relational Mapping)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>SOLID base</h3>
+
+          <ul>
+            <li>Single responsibility principle - every module or class should have responsibility over a single part of the functionality</li>
+            <li>Open/closed principle - open for extension, but closed for modification</li>
+            <li>Liskov substitution principle - if S is a subtype of T, then objects of type T may be replaced with objects of type S</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>SOLID base</h3>
+
+          <ul>
+            <li>Interface segregation principle - no client should be forced to depend on methods it does not use.</li>
+            <li>Dependency inversion principle - High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+          </ul>
+          <p>
+            But do people undestand and use this?
+          </p>
+        </section>
+
+        <section>
+          <p>
+            It all sounds great!
+          </p>
+          <h2>
+            So, what's wrong with Object Oriented Programming?
+          </h2>
+        </section>
+
+        <section>
+        <h3>"I made up the term 'object-oriented', and I can tell you I didn't have C++ in mind"</h3>
+        <h5>Alan Kay</h5>
+        </section>
+
+        <section>
+          <h2>
+            OOP promises graceful transition from domain models to implementation
+          </h2>
+        </section>
+
+
+        <section>
+          <h2>
+            Instead we have tons of unrelated technologies and patterns in a single project
+          </h2>
+
+          <p>
+            (xml, json, ruby, css, js, typescript, sql, nosql, ..)
+          </p>
+        </section>
+
+        <section>
+          <h2>
+            One of the key features of OOP (in 1980s) was the possibility to use it from domain modelling through analysis and design down to the implementation
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Code often does not represent a current state but a whole history of transformations of the business behind it
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Developers spend more time reading than writing
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            OOP code often does not reflect runtime behaviours so you have to play with it
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Software changes but there aren't many mechanisms that enable changes for OOP ecosystems
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Coding is not modeling
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Not always possible to map reality 1 to 1 with the code (software languages limitations, etc)
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Everything is overused...
+          </h2>
+        </section>
+
+        <section>
+          <h5>
+            Inheritance is overused
+          </h5>
+
+          <img src="img/inherit.png" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+
+        </section>
+
+        <section>
+          <h5>
+            The Fragile Base Class Problem
+          </h5>
+
+          <img src="img/parent.jpg" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+
+        </section>
+
+        <section>
+          <h2>
+            Encapsulation is overused
+          </h2>
+
+          <h4>The Reference Problem</h4>
+          <h5>Objects are passed to functions NOT by their value but by reference.</h5>
+        </section>
+
+        <section>
+          <h2>
+            ORMs play nicely with OOP, right?
+          </h2>
+
+          <h4>As long as you're a system God</h4>
+          <span>Try to use ORM to integrate with a preexisting 500 tables SQL based DB</span>
+        </section>
+
+        <section>
+          <h2>
+            ORMs play nicely with OOP, right?
+          </h2>
+
+          <h4>Instead of modelling data you just match it with objects</h4>
+          <span>And this happens for SQL databases that aren't object oriented</span>
+        </section>
+
+        <section>
+          <h2>
+            OOP data type definitions are spread out all over the place
+          </h2>
+        </section>
+
+        <section>
+          <h2>
+            Objects have private states
+          </h2>
+
+          <span>
+             State is the root of all evil. In particular when combined with functions with side effects
+          </span>
+        </section>
+
+        <section>
+          <h2>
+            Everything has to be an object
+          </h2>
+
+          <span>
+            In an OO language “time” has to be an object. But in a non OO language a “time” is a instance of a data type.
+          </span>
+        </section>
+
+        <section>
+          <h2>
+            Data structures and functions should not be bound together
+          </h2>
+
+          <span>
+            Since functions and data structures are completely different types of animals it is fundamentally incorrect to lock them up in the same cage.
+          </span>
+        </section>
+
+        <section>
+          <h1>
+            Test case time
+          </h1>
+        </section>
+
+        <section>
+          <h4>What's wrong with MVC the way it is?</h4>
+
+          <img src="img/mvc.png" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+        </section>
+
+        <section>
+          <h4>The way almost all MVC frameworks are being taught</h4>
+
+          <ul style="padding-right: 10%;">
+            <li>The "Rails" way is the best way</li>
+            <li>Fat models</li>
+            <li>Slim controllers</li>
+            <li>Models to rule it all</li>
+            <li>It's supposed to be object oriented programming - so let's make models validate themselfs</li>
+            <li>States, everywhere states</li>
+            <li>It can happen even if you don't know about it (callbacks)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>You need a framework to program in a given language</h4>
+
+<pre><code data-trim>
+# Gemfile
+source 'https://rubygems.org'
+
+gem 'rails', '5.0.1'
+</code></pre>
+
+<pre><code data-trim>
+%w(
+  rails
+  active_model/railtie
+  active_job/railtie
+  active_record/railtie
+  action_controller/railtie
+  action_mailer/railtie
+  action_view/railtie
+  sprockets/railtie
+).each { |lib| require lib }
+
+# Yeah now I can program...
+@some_object.try :test
+</code></pre>
+        </section>
+
+        <section>
+          <h4>The MVC framework way is the best way</h4>
+
+          <ul style="padding-right: 10%;">
+            <li>It's blazing fast at the beginning</li>
+            <li>Easy to add new features</li>
+            <li>Just test prototypes and it's production ready</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>The MVC framework way is <span style="color: red">NOT</span> the best way</h4>
+
+          <ul style="padding-right: 10%;">
+            <li>Business loves not only features</li>
+            <li>But also predictability</li>
+            <li>Monolith by design</li>
+            <li>A lot of magic</li>
+            <li>Model level associations and relations</li>
+            <li>Non-trivial business logic in models, controlers, views and (horrible!) callbacks</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Fat models</h4>
+          <img src="img/fat.png" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+        </section>
+
+        <section>
+          <h4>Fat models</h4>
+
+          <ul style="padding-right: 10%;">
+            <li>"Great" for everything</li>
+            <li>Validations</li>
+            <li>Presentation</li>
+            <li>Relations</li>
+            <li>Persistance</li>
+            <li>Scopes</li>
+            <li>Translations</li>
+            <li>Callbacks</li>
+            <li>Triggers</li>
+          </ul>
+
+          <h5>SRP?</h5>
+        </section>
+
+        <section>
+          <h4>Fat controllers</h4>
+          <img src="img/fat2.png" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+        </section>
+
+        <section>
+          <h4>Fat controllers</h4>
+
+          <ul>
+            <li>"Great" for everything</li>
+            <li>Validations</li>
+            <li>Presentation</li>
+            <li>Relations</li>
+            <li>Persistance</li>
+            <li>Scopes</li>
+          </ul>
+
+          <ul>
+            <li>Translations</li>
+            <li>Callbacks</li>
+            <li>Triggers</li>
+            <li>Data filtering</li>
+            <li>Authentication</li>
+            <li>Permissions and policies</li>
+          </ul>
+
+          <h5>SRP?</h5>
+        </section>
+
+        <section>
+          <h4>Models don't care about context (unless explicitly given)</h4>
+
+          <ul>
+            <li>Hard to build multi non-related model forms</li>
+            <li>Magic behind ORMs triggers weird things</li>
+            <li>"Let's build in a way that will remove everything with a user" automatically</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>States, everywhere states</h4>
+
+<pre><code data-trim>
+if @model.valid?
+
+else
+  if @model.errors[:xyz].present?
+
+  else
+
+  end
+end
+
+if @model.status == 'available'
+
+else
+
+end
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Callbacks</h4>
+
+          <img src="img/callbacks.jpg" style="background: none; border: none; box-shadow: 0 0 0 0 #fff;"/>
+        </section>
+
+        <section>
+          <h2>Most of these problems aren't Object Oriented Programming Language specific</h2>
+        </section>
+
+        <section>
+          <h4>Most of these problems aren't Object Oriented Programming Language specific</h4>
+
+          <h2>
+            They are Object Oriented Programmers specific
+          </h2>
+        </section>
+
+        <section>
+          <h3>
+            Organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations
+          </h3>
+
+          <p>Melvin Conway</p>
+        </section>
+
+        <section>
+          <h3>It's always been like that, why should I care?</h3>
+
+          <p>
+            Code is the reflection of programmers that make it
+          </p>
+        </section>
+
+        <section>
+          <h3>God objects from god people</h3>
+        </section>
+
+        <section>
+          <h2>Everybody wants to be in a process and make decisions</h2>
+        </section>
+
+        <section>
+          <h4>What we can do about it all?</h4>
+
+          <ul>
+            <li>Stop using OOP and do stuff manually (LOL)</li>
+            <li>Stop using frameworks and do stuff manually (LOL)</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h4>What we think we can do about it?</h4>
+
+          <ul>
+            <li>Introduce some other layers (policies, services, presenters, validators, uploaders, jobs, etc)</li>
+            <li>and... NOT bind most of them in the controller context</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Domain experience is super important for problem solving
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Domain specific languages and ubiquitous language
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Rather than modeling code we need the code to be the model
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Bubbles and arrows don't crash - thats why modeling tools are so popular
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Architecture is one of the most important artifacts of a system and yet it is not easily recoverable from the code
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            CQRS (Command Query Responsibility Segregation)
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Event sourcing
+          </h2>
+        </section>
+
+        <section>
+          <h4>What we can <span style="color: red">REALLY</span> do about it?</h4>
+
+          <h2>
+            Railway-oriented programming
+          </h2>
+        </section>
+
+        <section>
+          <h4>
+            Stop worrying so much about the objects. Concentrate on satisfying the principles of object orientation rather than object-izing everything. And most of all, consider the poor sap who will have to read and support this code after you're done with it
+          </h4>
+        </section>
+
+        <section>
+          <h4>
+True "object" oriented programming is about modeling computers and software in terms of HUMAN/USER mental models, rather than being just a tool for PROGRAMMERS.
+          </h4>
+        </section>
+
+
+        <section>
+          <h4>Railway-programming - how does it work?</h4>
+
+          <img src="img/operation.png" style="max-width: 35%"/>
+        </section>
+
+        <section>
+          <h4>How does it work?</h4>
+
+          <h5>Railway-oriented programming</h5>
+          <h6>
+            The flow pipetree is a mix of the Either monad and Railway-oriented programming
+          </h6>
+
+          <span>
+          <img src="img/pipe.gif" style="max-width: 35%"/>
+          </span>
+        </section>
+
+        <section>
+          <h1>THE END - Q &amp; A</h1>
+
+          <ul>
+            <li><a href="mailto:maciej@mensfeld.pl">maciej@mensfeld.pl</a></li>
+            <li><a href="http://twitter.com/maciejmensfeld">@maciejmensfeld</a></li>
+            <li><a href="http://mensfeld.pl">mensfeld.pl</a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
