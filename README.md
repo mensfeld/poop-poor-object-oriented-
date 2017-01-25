@@ -1,3 +1,3 @@
-# Presentation about Trailblazer 2.0
+# POOP - Poor Object Oriented Programming Programmers - Presentation
 
-Open [http://mensfeld.github.io/trailblazer-2.0-introduction](http://mensfeld.github.io/trailblazer-2.0-introduction)
+Open [http://mensfeld.github.io/poop-poor-object-oriented-programmers](http://mensfeld.github.io/poop-poor-object-oriented-programmers)
